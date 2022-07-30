@@ -21,6 +21,13 @@ export interface IHttpResponse<T = any> {
   body: T;
 }
 
+export interface IInterceptors {
+  onSuccess: () => void;
+  onFailure: () => void;
+}
+
 export interface IHttpClient {
   request: <I, O>(params: IHttpRequest<I>) => Promise<IHttpResponse<O>>;
+  setRequestInterceptors: (handler: IInterceptors) => void;
+  setResponseInterceptors: (handler: IInterceptors) => void;
 }

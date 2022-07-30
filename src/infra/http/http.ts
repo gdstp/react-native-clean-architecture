@@ -2,6 +2,7 @@ import {
   IHttpClient,
   IHttpRequest,
   IHttpResponse,
+  IInterceptors,
 } from '@/data/protocols/http.protocol';
 import axios, { AxiosInstance } from 'axios';
 
@@ -17,6 +18,7 @@ class HttpClient implements IHttpClient {
         'x-api-key': '0',
       },
     });
+    this.httpClient.interceptors;
   }
 
   public async request<I, O>({
@@ -34,6 +36,14 @@ class HttpClient implements IHttpClient {
       body: data,
       statusCode: status,
     };
+  }
+
+  public setRequestInterceptors({ onSuccess, onFailure }: IInterceptors) {
+    this.httpClient.interceptors.request.use(onSuccess, onFailure);
+  }
+
+  public setResponseInterceptors({ onSuccess, onFailure }: IInterceptors) {
+    this.httpClient.interceptors.response.use(onSuccess, onFailure);
   }
 }
 
