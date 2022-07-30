@@ -2,13 +2,13 @@ import {
   ICreateUserInput,
   ICreateUserOutput,
 } from '@/domain/dto/create-user.dto';
-import { IUserRepository } from '@/domain/repositories/user.repository';
+import { ICreateUserRepository } from '@/domain/repositories/user/create-user.repository';
 import { IUseCaseSignature } from '@/domain/signatures/use-case';
 
 class CreateUserUseCase
   implements IUseCaseSignature<ICreateUserInput, ICreateUserOutput>
 {
-  constructor(private readonly userRepository: IUserRepository) {}
+  constructor(private readonly userRepository: ICreateUserRepository) {}
 
   public async exec(input: ICreateUserInput): Promise<ICreateUserOutput> {
     const { token } = await this.userRepository.createUser(input);

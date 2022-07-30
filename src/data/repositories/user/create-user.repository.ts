@@ -2,10 +2,10 @@ import {
   ICreateUserInput,
   ICreateUserOutput,
 } from '@/domain/dto/create-user.dto';
-import { IUserRepository } from '@/domain/repositories/user.repository';
-import { IHttpClient } from '../protocols/http.protocol';
+import { ICreateUserRepository } from '@/domain/repositories/user/create-user.repository';
+import { IHttpClient } from '../../protocols/http.protocol';
 
-class UserRepository implements IUserRepository {
+class UserRepository implements ICreateUserRepository {
   constructor(private readonly httpClient: IHttpClient) {}
 
   public async createUser(input: ICreateUserInput): Promise<ICreateUserOutput> {
