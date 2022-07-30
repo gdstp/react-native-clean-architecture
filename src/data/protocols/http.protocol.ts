@@ -8,9 +8,9 @@ export interface IHttpRequest<T = any> {
 
 export interface IHttpResponse<T = any> {
   statusCode: number;
-  body?: T;
+  body: T;
 }
 
 export interface IHttpClient {
-  request: (params: IHttpRequest) => Promise<IHttpResponse>;
+  request: <I, O>(params: IHttpRequest<I>) => Promise<IHttpResponse<O>>;
 }
