@@ -3,7 +3,7 @@ import {
   IHttpRequest,
   IHttpResponse,
   IInterceptors,
-} from '@/data/protocols/http.protocol';
+} from '../../data/protocols/http.protocol';
 import axios, { AxiosInstance } from 'axios';
 
 class HttpClient implements IHttpClient {

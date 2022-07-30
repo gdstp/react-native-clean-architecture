@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import './src/shared/ioc/container';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 

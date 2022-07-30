@@ -1,9 +1,9 @@
 import {
   ICreateUserInput,
   ICreateUserOutput,
-} from '@/domain/dto/create-user.dto';
-import { IUserRepository } from '@/domain/repositories/user.repository';
-import { IUseCaseSignature } from '@/domain/signatures/use-case';
+} from '../../../domain/dto/create-user.dto';
+import { IUserRepository } from '../../..//domain/repositories/user.repository';
+import { IUseCaseSignature } from '../../..//domain/signatures/use-case';
 import { inject } from 'tsyringe';
 
 class CreateUserUseCase

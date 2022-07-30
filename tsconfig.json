@@ -11,15 +11,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": false,
-    "baseUrl": "./",
-    "paths": {
-      "@/domain/*": ["./src/domain/*"],
-      "@/data/*": [
-        "./src/data/*"
-      ],
-      "@/presentation/*": [
-        "./src/presentation/*"
-      ]
-    }
   },
+  "exclude": ["node_modules"]
 }

@@ -1,8 +1,8 @@
 import {
   ICreateUserInput,
   ICreateUserOutput,
-} from '@/domain/dto/create-user.dto';
-import { IUserRepository } from '@/domain/repositories/user.repository';
+} from '../../..//domain/dto/create-user.dto';
+import { IUserRepository } from '../../../domain/repositories/user.repository';
 import { IHttpClient } from '../../protocols/http.protocol';
 
 class UserRepository implements IUserRepository {
