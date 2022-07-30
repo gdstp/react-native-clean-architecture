@@ -1,6 +1,24 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "allowJs": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/domain/*": ["./src/domain/*"],
+      "@/data/*": [
+        "./src/data/*"
+      ],
+      "@/presentation/*": [
+        "./src/presentation/*"
+      ]
+    }
+  },
 }
