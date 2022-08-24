@@ -7,10 +7,9 @@ import {
 import axios, { AxiosInstance } from 'axios';
 
 class HttpClient implements IHttpClient {
-  constructor(
-    private readonly baseUrl: string,
-    private readonly httpClient: AxiosInstance
-  ) {
+  private readonly baseUrl: string;
+  private readonly httpClient: AxiosInstance;
+  constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
     this.httpClient = axios.create({
       baseURL: this.baseUrl,

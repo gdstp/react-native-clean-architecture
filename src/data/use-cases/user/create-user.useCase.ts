@@ -4,8 +4,9 @@ import {
 } from '../../../domain/dto/create-user.dto';
 import { IUserRepository } from '../../..//domain/repositories/user.repository';
 import { IUseCaseSignature } from '../../..//domain/signatures/use-case';
-import { inject } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 
+@injectable()
 class CreateUserUseCase
   implements IUseCaseSignature<ICreateUserInput, ICreateUserOutput>
 {
@@ -15,6 +16,7 @@ class CreateUserUseCase
   }
 
   public async exec(input: ICreateUserInput): Promise<ICreateUserOutput> {
+    console.log('call');
     const { token } = await this.userRepository.createUser(input);
 
     return {

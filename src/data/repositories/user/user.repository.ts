@@ -1,3 +1,4 @@
+import { singleton } from 'tsyringe';
 import {
   ICreateUserInput,
   ICreateUserOutput,
